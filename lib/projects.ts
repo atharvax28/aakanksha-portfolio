@@ -126,7 +126,7 @@ export const projects: Project[] = [
       },
       {
         title: "Cafe",
-        images: ["/projects/fractal/img-01.jpg", "/projects/fractal/img-06.jpg"],
+        images: ["/projects/fractal/img-01.png", "/projects/fractal/img-06.jpg"],
       },
     ],
   },

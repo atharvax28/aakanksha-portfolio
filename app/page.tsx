@@ -375,7 +375,7 @@ export default function Home() {
               <a href="mailto:contact@aakanksha-tayade.com">GET IN TOUCH</a>
             </div>
             <div className="footer-cv">
-              <a href="https://docs.google.com/presentation/d/1904aufx_Nq2rVSv_cuVenVwjhk4ZBkJS/edit?usp=sharing&ouid=116468548126241667113&rtpof=true&sd=true" className="hero-cta" target="_blank" rel="noopener noreferrer">
+              <a href="https://docs.google.com/presentation/d/1904aufx_Nq2rVSv_cuVenVwjhk4ZBkJS/export/pdf" className="hero-cta" target="_blank" rel="noopener noreferrer">
                 <span>DOWNLOAD CV</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10" /></svg>
               </a>
