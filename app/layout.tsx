@@ -1,14 +1,54 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
-import { AuthProvider } from "@/components/auth-provider"
 import "./globals.css"
 
+const siteUrl = "https://aakankshatayadeportfolio.vercel.app"
+const siteTitle = "Aakanksha Tayade | Workplace Interior Designer"
+const siteDescription =
+  "Associate Workplace Designer with 16+ years of experience in commercial interiors, space planning, and people-centric design. Specializing in transforming business spaces."
+
 export const metadata: Metadata = {
-  title: "Aakanksha Tayade | Workplace Interior Designer",
-  description:
-    "Associate Workplace Designer with 16+ years of experience in commercial interiors, space planning, and people-centric design. Specializing in transforming business spaces.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteTitle,
+    template: "%s | Aakanksha Tayade",
+  },
+  description: siteDescription,
+  keywords: [
+    "workplace interior designer",
+    "commercial interior design",
+    "office space planning",
+    "corporate interiors India",
+    "Aakanksha Tayade",
+  ],
   generator: "v0.app",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
+    title: siteTitle,
+    description: siteDescription,
+    siteName: "Aakanksha Tayade",
+    images: [
+      {
+        url: "/projects/fractal/img-05.jpg",
+        alt: "Fractal Tech Campus, Bangalore — workplace interior by Aakanksha Tayade",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/projects/fractal/img-05.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({
@@ -27,9 +67,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        {children}
         <Analytics />
       </body>
     </html>

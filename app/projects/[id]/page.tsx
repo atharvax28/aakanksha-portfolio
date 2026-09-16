@@ -29,6 +29,21 @@ export async function generateMetadata(props: ProjectPageProps): Promise<Metadat
   return {
     title: `${project.name} | Aakanksha Tayade`,
     description: project.description,
+    alternates: {
+      canonical: `/projects/${project.id}`,
+    },
+    openGraph: {
+      type: "article",
+      title: `${project.name} | Aakanksha Tayade`,
+      description: project.description,
+      images: [{ url: project.thumbnail, alt: project.name }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.name} | Aakanksha Tayade`,
+      description: project.description,
+      images: [project.thumbnail],
+    },
   }
 }
 

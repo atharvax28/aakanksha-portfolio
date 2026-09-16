@@ -2,7 +2,6 @@
 
 import { useEffect } from "react"
 import { ProjectsCarousel } from "@/components/projects-carousel"
-import { AuthGuard } from "@/components/auth-guard"
 import {
   DraftingCompass,
   Box,
@@ -178,7 +177,23 @@ export default function Home() {
   }, [])
 
   return (
-    <AuthGuard>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Aakanksha Tayade",
+            jobTitle: "Workplace Interior Designer",
+            url: "https://aakankshatayadeportfolio.vercel.app",
+            email: "mailto:contact@aakanksha-tayade.com",
+            telephone: "+91-91674-81822",
+            sameAs: ["https://www.linkedin.com/in/aakanksha-tayade-a03ab3164/"],
+          }),
+        }}
+      />
+
       <div className="blob" id="cursor-blob"></div>
 
       <header className="main-header">
@@ -393,6 +408,6 @@ export default function Home() {
           </div>
         </footer>
       </main>
-    </AuthGuard>
+    </>
   )
 }
