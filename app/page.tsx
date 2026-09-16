@@ -1,15 +1,13 @@
 "use client"
 
 import { useEffect } from "react"
+import Image from "next/image"
 import { ProjectsCarousel } from "@/components/projects-carousel"
 import {
   DraftingCompass,
   Box,
-  Layers,
   Layout,
-  Monitor,
   Compass,
-  Briefcase
 } from "lucide-react"
 
 export default function Home() {
@@ -263,10 +261,13 @@ export default function Home() {
             {/* Right: Image */}
             <div className="hero-right">
               <div className="hero-image-container" id="hero-img">
-                <img
+                <Image
                   src="/projects/fractal/img-05.jpg"
                   alt="Interior Design by Aakanksha Tayade"
                   className="hero-image"
+                  fill
+                  priority
+                  sizes="(max-width: 1023px) 100vw, 60vw"
                 />
                 <div className="hero-image-overlay"></div>
                 <div className="hero-image-label">
@@ -293,7 +294,7 @@ export default function Home() {
         </section>
 
         {/* MARQUEE */}
-        <div className="scrolling-marquee">
+        <div className="scrolling-marquee" aria-hidden="true">
           <div className="marquee-inner">
             <span className="huge-type outline-text">INTERIOR DESIGN — SPACE PLANNING — COMMERCIAL INTERIORS — PEOPLE-CENTRIC — </span>
             <span className="huge-type outline-text">INTERIOR DESIGN — SPACE PLANNING — COMMERCIAL INTERIORS — PEOPLE-CENTRIC — </span>

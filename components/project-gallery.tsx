@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react"
 
 interface ProjectGalleryProps {
@@ -52,7 +53,12 @@ export function ProjectGallery({ images, projectName }: ProjectGalleryProps) {
                         className="gallery-item relative group cursor-pointer"
                         onClick={() => openModal(index)}
                     >
-                        <img src={image} alt={`${projectName} - Image ${index + 1}`} />
+                        <Image
+                            src={image}
+                            alt={`${projectName} - Image ${index + 1}`}
+                            fill
+                            sizes="(max-width: 640px) 100vw, 400px"
+                        />
                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <ZoomIn size={48} className="text-white opacity-80" />
                         </div>

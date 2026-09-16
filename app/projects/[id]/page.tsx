@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { projects } from "@/lib/projects"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -85,11 +86,14 @@ export default async function ProjectPage(props: ProjectPageProps) {
       </section>
 
       {/* Main Image */}
-      <section className="project-main-image w-full h-[60vh] md:h-[80vh]">
-        <img
+      <section className="project-main-image relative w-full h-[60vh] md:h-[80vh]">
+        <Image
           src={heroImage}
           alt={project.name}
-          className="w-full h-full object-cover"
+          className="object-cover"
+          fill
+          sizes="100vw"
+          priority
         />
       </section>
 

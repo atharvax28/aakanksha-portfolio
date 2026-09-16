@@ -584,16 +584,24 @@ section.expertise-section {
 
 .marquee-inner {
   display: inline-block;
+  will-change: transform;
+  backface-visibility: hidden;
   animation: 20s linear 0s infinite normal none running marquee;
 }
 
 @keyframes marquee {
   0% {
-    transform: translateX(0px);
+    transform: translate3d(0, 0, 0);
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-inner {
+    animation-play-state: paused;
   }
 }
 
@@ -1361,6 +1369,7 @@ footer {
 }
 
 .gallery-item {
+  position: relative;
   overflow: hidden;
   height: 400px;
 }

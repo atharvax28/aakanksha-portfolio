@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { projects } from "@/lib/projects"
 import { ChevronLeft, ChevronRight } from "lucide-react"
@@ -126,11 +127,13 @@ export function ProjectsCarousel() {
           {/* Right Panel - Image */}
           <div className="carousel-image-wrapper">
             <Link href={`/projects/${currentProject.id}`}>
-              <img
+              <Image
                 key={currentProject.thumbnail}
                 src={currentProject.thumbnail}
                 alt={currentProject.name}
                 className="carousel-image"
+                fill
+                sizes="(max-width: 767px) 100vw, 50vw"
               />
             </Link>
           </div>
